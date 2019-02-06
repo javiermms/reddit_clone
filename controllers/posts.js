@@ -1,9 +1,15 @@
 const Post = require('../models/post');
 
 module.exports = app => {
-    // HOMEPAGE
+    // INDEX
     app.get('/', (req, res) => {
-        res.render('home')
+        Post.find({})
+        .then(posts => {
+            res.render("posts-index", { posts });
+        })
+        .catch(err => {
+            console.log(err.message);
+        });
     });
       
     // NEW
