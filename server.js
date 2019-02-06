@@ -18,16 +18,6 @@ app.set('view engine', 'handlebars');
 // Set db
 require('./data/reddit-db');
 
-app.get('/', (req, res) => {
-  res.render('home')
-})
-
-
-// NEW
-app.get('/posts/new', (req, res) => {
-    res.render('posts-new', {});
-})
-
 require('./controllers/posts.js')(app);
 
 app.listen(3000, () => {
