@@ -19,6 +19,7 @@ app.set('view engine', 'handlebars');
 require('./data/reddit-db');
 
 require('./controllers/posts.js')(app);
+require('./controllers/comments.js')(app);
 
 app.listen(3000, () => {
   console.log('App listening on port 3000!')
